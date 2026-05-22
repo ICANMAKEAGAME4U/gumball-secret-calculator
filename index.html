@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gumball Secret Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Calculator View -->
+        <div id="calculator-view" class="view active">
+            <div class="calculator">
+                <div class="display" id="display">0</div>
+                <div class="buttons">
+                    <button class="btn" onclick="appendNumber('7')">7</button>
+                    <button class="btn" onclick="appendNumber('8')">8</button>
+                    <button class="btn" onclick="appendNumber('9')">9</button>
+                    <button class="btn operator" onclick="setOperator('/')">/</button>
+                    
+                    <button class="btn" onclick="appendNumber('4')">4</button>
+                    <button class="btn" onclick="appendNumber('5')">5</button>
+                    <button class="btn" onclick="appendNumber('6')">6</button>
+                    <button class="btn operator" onclick="setOperator('*')">*</button>
+                    
+                    <button class="btn" onclick="appendNumber('1')">1</button>
+                    <button class="btn" onclick="appendNumber('2')">2</button>
+                    <button class="btn" onclick="appendNumber('3')">3</button>
+                    <button class="btn operator" onclick="setOperator('-')">-</button>
+                    
+                    <button class="btn" onclick="appendNumber('0')">0</button>
+                    <button class="btn" onclick="appendNumber('.')">.</button>
+                    <button class="btn equals" onclick="checkSecret()">=</button>
+                    <button class="btn operator" onclick="setOperator('+')">+</button>
+                    
+                    <button class="btn clear" onclick="clearDisplay()" style="grid-column: 1 / 5;">C</button>
+                </div>
+            </div>
+            <p class="hint">*Try entering a secret code and pressing equals...</p>
+        </div>
+
+        <!-- Secret Game View -->
+        <div id="game-view" class="view">
+            <div class="game-header">
+                <h1>🎮 GUMBALL'S COIN RUSH 🎮</h1>
+                <div class="game-stats">
+                    <span>Score: <span id="score">0</span></span>
+                    <span>Lives: <span id="lives">3</span></span>
+                    <span>Level: <span id="level">1</span></span>
+                </div>
+            </div>
+            
+            <div class="game-container">
+                <canvas id="gameCanvas" width="400" height="400"></canvas>
+            </div>
+            
+            <div class="game-controls">
+                <button onclick="resetCalculator()" class="btn-reset">Exit Game (Return to Calculator)</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="calculator.js"></script>
+    <script src="game.js"></script>
+</body>
+</html>
